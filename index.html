@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ✏️ Change this to your name -->
+  <title>Althea Nicole Lugena | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #d6337a;
+      --pink-dark: #b8245f;
+      --pink-soft: #f8c9dc;
+      --cream: #fdf6ee;
+      --text: #333;
+      --muted: #666;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background: linear-gradient(180deg, var(--cream) 0%, #fbe9ef 50%, #f9dce8 100%);
+      min-height: 100vh;
+    }
+
+    /* ---------- Navbar ---------- */
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 18px 8%;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 12px rgba(214, 51, 122, 0.08);
+    }
+    .logo { font-size: 1.4rem; font-weight: 700; color: var(--pink); text-decoration: none; }
+    nav ul { list-style: none; display: flex; gap: 28px; }
+    nav a.link { text-decoration: none; color: var(--text); font-weight: 500; transition: color .2s; }
+    nav a.link:hover { color: var(--pink); }
+
+    section { padding: 90px 8%; }
+    h2.title { text-align: center; color: var(--pink); font-size: 2rem; margin-bottom: 40px; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      display: flex; align-items: center; justify-content: center; gap: 60px;
+      min-height: 80vh; flex-wrap: wrap;
+    }
+    .hero img {
+      width: 240px; height: 240px; object-fit: cover; border-radius: 50%;
+      border: 5px solid var(--pink);
+      box-shadow: 0 10px 30px rgba(214, 51, 122, 0.3);
+      background: var(--pink-soft);
+    }
+    .badge {
+      display: inline-block; background: var(--pink-soft); color: var(--pink-dark);
+      font-size: .75rem; font-weight: 700; letter-spacing: 1px;
+      padding: 5px 14px; border-radius: 20px; margin-bottom: 12px;
+    }
+    .hero h1 { font-size: 3rem; line-height: 1.2; }
+    .hero h1 span { color: var(--pink); }
+    .hero p { color: var(--muted); max-width: 500px; margin-top: 12px; }
+
+    /* ---------- About ---------- */
+    .about-box {
+      max-width: 800px; margin: 0 auto; text-align: center;
+      background: #fff; padding: 40px; border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      color: var(--muted); line-height: 1.8;
+    }
+    .skills { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 24px; }
+    .skills span {
+      background: var(--pink-soft); color: var(--pink-dark);
+      padding: 6px 16px; border-radius: 20px; font-size: .85rem; font-weight: 600;
+    }
+
+    /* ---------- Projects ---------- */
+    .projects {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px; max-width: 1000px; margin: 0 auto;
+    }
+    .card {
+      background: #fff; border-radius: 16px; overflow: hidden;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+      transition: transform .3s, box-shadow .3s;
+    }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 14px 35px rgba(214, 51, 122, 0.2); }
+    .card img { width: 100%; height: 200px; object-fit: cover; display: block; background: var(--pink-soft); }
+    .card-body { padding: 22px; }
+    .card h3 { color: var(--pink); margin-bottom: 8px; }
+    .card p { color: var(--muted); font-size: .92rem; margin-bottom: 18px; }
+
+    .btn {
+      display: inline-block; background: var(--pink); color: #fff;
+      padding: 10px 24px; border-radius: 25px; text-decoration: none; font-weight: 600;
+      transition: background .2s, transform .2s;
+    }
+    .btn:hover { background: var(--pink-dark); transform: scale(1.05); }
+
+    /* ---------- Contact ---------- */
+    .contact { text-align: center; background: rgba(255,255,255,0.5); }
+    .contact p { color: var(--muted); margin-bottom: 24px; }
+    .contact-links { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+    .contact-links a {
+      background: #fff; color: var(--text); text-decoration: none;
+      padding: 10px 22px; border-radius: 25px; border: 2px solid var(--pink-soft);
+      font-weight: 500; transition: all .2s;
+    }
+    .contact-links a:hover { border-color: var(--pink); color: var(--pink); }
+
+    footer { text-align: center; padding: 24px; color: var(--muted); font-size: .85rem; }
+
+    /* ---------- Phone screens ---------- */
+    @media (max-width: 700px) {
+      nav { padding: 16px 5%; }
+      nav ul { gap: 14px; font-size: .9rem; }
+      section { padding: 60px 5%; }
+      .hero { text-align: center; gap: 30px; }
+      .hero h1 { font-size: 2.1rem; }
+      .hero img { width: 180px; height: 180px; }
+    }
+  </style>
+  <script>
+    // Shows a pink placeholder until you add your own images
+    function placeholder(text) {
+      const svg = `<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400'><rect width='100%' height='100%' fill='#f8c9dc'/><text x='50%' y='50%' font-family='sans-serif' font-size='36' font-weight='bold' fill='#d6337a' text-anchor='middle' dominant-baseline='middle'>${text}</text></svg>`;
+      return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+    }
+  </script>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="#home" class="logo">Your Name</a>  <!-- ✏️ -->
+    <ul>
+      <li><a class="link" href="#home">Home</a></li>
+      <li><a class="link" href="#about">About</a></li>
+      <li><a class="link" href="#projects">Projects</a></li>
+      <li><a class="link" href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <!-- ✏️ Put your photo in an "images" folder and name it profile.jpg -->
+    <img src="images/profile.jpg" alt="My photo"
+         onerror="this.onerror=null;this.src=placeholder('Your Photo')">
+    <div>
+      <span class="badge">DEVELOPER</span>
+      <h1>Hi, I'm <span>Althea</span></h1>  <!-- ✏️ -->
+      <p>Welcome to my sparkling corner of the web! I craft fun, functional, and beautiful web applications.</p>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 class="title">About Me</h2>
+    <div class="about-box">
+      <!-- ✏️ Write about yourself -->
+      <p>I'm a student who loves building websites and apps. I enjoy turning ideas into designs that are easy and fun to use, and I'm always learning something new.</p>
+      <div class="skills">
+        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Flutter</span><span>Git &amp; GitHub</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2 class="title">My Projects</h2>
+    <div class="projects">
+
+      <!-- ✏️ Project 1 -->
+      <div class="card">
+        <img src="images/project1.jpg" alt="Project 1"
+             onerror="this.onerror=null;this.src=placeholder('Project 1')">
+        <div class="card-body">
+          <h3>Pink Store Shop</h3>
+          <p>A chic, responsive web interface for an pink boutique featuring product that only contains pink items.</p>
+          <a href="#" class="btn" target="_blank">View Project</a>
+        </div>
+      </div>
+
+      <!-- ✏️ Project 2 -->
+      <div class="card">
+        <img src="images/project2.jpg" alt="Project 2"
+             onerror="this.onerror=null;this.src=placeholder('Project 2')">
+        <div class="card-body">
+          <h3>Task Planner</h3>
+          <p>A stylish productivity dashboard made with HTML, CSS and JavaScript, with task filtering and saving.</p>
+          <a href="#" class="btn" target="_blank">View Project</a>
+        </div>
+      </div>
+
+      <!-- ✏️ Project 3 (delete this card if you only have 2) -->
+      <div class="card">
+        <img src="images/project3.jpg" alt="Project 3"
+             onerror="this.onerror=null;this.src=placeholder('Project 3')">
+        <div class="card-body">
+          <h3>Flutter App</h3>
+          <p>A mobile app built with Flutter for my ADET activities, with clean layouts and simple navigation.</p>
+          <a href="#" class="btn" target="_blank">View Project</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <h2 class="title">Let's Stay Connected!</h2>
+    <p>Feel free to reach out for collaborations or just a friendly chat!</p>
+    <div class="contact-links">
+      <!-- ✏️ Replace with your real links -->
+      <a href="mailto:altheanicolelugena@gmail.com">📧 Email</a>
+      <a href="https://github.com/your-username" target="_blank">💻 GitHub</a>
+      <a href="https://facebook.com/a.ltheaaaaanicole/" target="_blank">📘 Facebook</a>
+      <a href="https://instagram.com/a_ltheaaaa/" target="_blank">📸 Instagram</a>
+    </div>
+  </section>
+
+  <footer>© 2026 Althea Nicole Lugena. Made with 💖</footer>
+
+</body>
+</html>
